@@ -2,6 +2,7 @@
 title = Foundation Bearing Capacity
 package.name = foundationcapacity
 package.domain = org.example
+version = 1.0
 source.dir = .
 source.include_exts = py,png,jpg,kv
 requirements = python3,kivy,numpy,matplotlib
