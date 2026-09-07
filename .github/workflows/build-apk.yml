@@ -1,8 +1,10 @@
 name: Build Android APK
+
 on:
   workflow_dispatch:
   push:
-    branches: [ main ]
+    branches:
+      - main
 
 jobs:
   build:
@@ -31,12 +33,7 @@ jobs:
           python -m pip install --upgrade pip setuptools wheel
           python -m pip install "cython<3.4"
           python -m pip install buildozer
-       - name: Prepare python-for-android
-        run: |
-          buildozer android p4a -- --help
-          FREETYPE_RECIPE=".buildozer/android/platform/python-for-android/pythonforandroid/recipes/freetype/__init__.py"
-          sed -i 's#https://download.savannah.gnu.org/releases/freetype/freetype-{version}.tar.gz#https://nongnu.uib.no/freetype/freetype-{version}.tar.gz#' "$FREETYPE_RECIPE"
-          grep "url =" "$FREETYPE_RECIPE"
+
       - name: Cache Buildozer
         uses: actions/cache@v4
         with:
