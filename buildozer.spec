@@ -1,4 +1,5 @@
 [app]
+p4a.local_recipes = ./p4a-recipes
 
 title = Foundation Bearing Capacity
 package.name = foundationcapacity
